@@ -24,6 +24,8 @@ client.on('message', (msg) => {
     msg.reply('♪robots in disguise~');
   } else if (msg.content === '!drtin~') {
     msg.reply('Good enough for me♡');
+  } else if (msg.content === '!tin-tsk') {
+    msg.reply('Sloppy Sloppy Sloppy~');
   }
 });
 
