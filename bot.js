@@ -1,4 +1,6 @@
-// tutorial: https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b
+// tutorial 1: https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b
+// tutorial 2: https://medium.com/davao-js/v2-tutorial-deploy-your-discord-bot-to-heroku-part-2-9a37572d5de4
+// debugging 1:  https://github.com/renesansz/discord-greeter-bot/issues/252
 
 // Run dotenv
 require('dotenv').config();
@@ -20,6 +22,8 @@ client.on('message', (msg) => {
     );
   } else if (msg.content === '!transformers') {
     msg.reply('♪robots in disguise~');
+  } else if (msg.content === '!drtin~') {
+    msg.reply('Good enough for me♡');
   }
 });
 

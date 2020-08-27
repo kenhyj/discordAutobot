@@ -2,7 +2,7 @@
   "name": "autobot",
   "version": "1.0.0",
   "description": "Udonz autobot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
