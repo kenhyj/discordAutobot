@@ -12,20 +12,23 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-// EFFECT: Text Commands Replies with texts.
+// Add list of text memes here
+const messages = {
+  fliptable: '(┛◉Д◉)┛彡┻━┻',
+  babyshark:
+    '♫ Baby shark, doo doo doo doo doo doo~ ♪ Baby shark, doo doo doo doo doo doo \n !play baby shark',
+  transformers: '♪robots in disguise~',
+  'drtin~': 'Good enough for me♡',
+  'tin-tsk': 'Sloppy Sloppy Sloppy',
+};
+
+// this will return the text memes listed above.
+// you must have ! in front of the command
 client.on('message', (msg) => {
-  if (msg.content === '!fliptable') {
-    msg.reply('(┛◉Д◉)┛彡┻━┻');
-  } else if (msg.content === '!babyshark') {
-    msg.reply(
-      '♫ Baby shark, doo doo doo doo doo doo~ ♪ Baby shark, doo doo doo doo doo doo \n !play baby shark'
-    );
-  } else if (msg.content === '!transformers') {
-    msg.reply('♪robots in disguise~');
-  } else if (msg.content === '!drtin~') {
-    msg.reply('Good enough for me♡');
-  } else if (msg.content === '!tin-tsk') {
-    msg.reply('Sloppy Sloppy Sloppy~');
+  for (const key in messages) {
+    if (msg.content === '!'.concat(key)) {
+      msg.reply(messages[key]);
+    }
   }
 });
 
