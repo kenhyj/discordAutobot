@@ -44,6 +44,7 @@ Upper-lower cases have been made negligible. Spelling however matters.
 - _!fliptable_ : answers with "┛◉Д◉)┛ 彡 ┻━┻"
 - _!transformers_ : answers with "robots in disguise"
 - _!drtin~_ : answers with "Good enough for me♡"
+- _!joke_: tells a transformer joke
 
 #### Embed Reply
 
