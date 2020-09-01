@@ -64,6 +64,10 @@ const staticpics = {
     src:
       'https://media1.tenor.com/images/24c30256238052c38a45bdd94cb06a9d/tenor.gif',
   },
+  facepalm: {
+    title: 'facepalm',
+    src: 'https://media.giphy.com/media/yfjk76P5Ex9y8/source.gif',
+  },
 };
 // Add list of  picture memes here:
 const directedmeme = {
