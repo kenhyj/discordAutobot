@@ -51,6 +51,7 @@ Upper-lower cases have been made negligible. Spelling however matters.
 
 - _!sloppy_ _@username_: answers with Sloppy Sloppy Sloppy embed with the mentioned user's username and avatar. If the username is invalid or empty, it will default to the author of this message.
 - _!stewiesubs_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is of Stewie beating the dying life out of Brian the dog.
+- _!amongkill#_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is a Among Us game mascot killing another mascot. when it's stab kill when #=1, shot kill when #=2, snap kill when #=3.
 - _!pepecry_ : returns with a pepe crying gif
 - _!licky_ : returns with a Oreimo protagonist licking lewd gif
 
