@@ -14,6 +14,22 @@ after that:
 $ node bot.js
 ```
 
+if you want to see any changes: Control+C
+then
+
+```bash
+$ node bot.js
+```
+
+## Deploy to Heroku
+
+the only thing you need is .env file
+with the following:
+
+```bash
+DISCORD_TOKEN= YOUR_TOKEN_HERE
+```
+
 ## About
 
 Author: kenhyj
@@ -34,3 +50,12 @@ Upper-lower cases have been made negligible. Spelling however matters.
 Upper-lower cases have been made negligible. Spelling however matters.
 
 - _!sloppy_ _@username_: answers with Sloppy Sloppy Sloppy embed with the mentioned user's username and avatar. If the username is invalid or empty, it will default to the author of this message.
+- _!stewiesubs_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is of Stewie beating the dying life out of Brian the dog.
+- _!pepecry_ : returns with a pepe crying gif
+- _!licky_ : returns with a Oreimo protagonist licking lewd gif
+
+### Credits and help:
+
+tutorial 1: https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b
+tutorial 2: https://medium.com/davao-js/v2-tutorial-deploy-your-discord-bot-to-heroku-part-2-9a37572d5de4
+debugging 1: https://github.com/renesansz/discord-greeter-bot/issues/252
