@@ -55,6 +55,7 @@ Upper-lower cases have been made negligible. Spelling however matters.
 - _!amongkill#_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is a Among Us game mascot killing another mascot. when it's stab kill when #=1, shot kill when #=2, snap kill when #=3.
 - _!pepecry_ : returns with a pepe crying gif
 - _!licky_ : returns with a Oreimo protagonist licking lewd gif
+- _!facepalm_ : returns with a Sokka (Avatar last airbender) facepalming gif.
 
 ### Credits and help:
 
