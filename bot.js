@@ -52,7 +52,7 @@ const texts = {
   transformers: '♪robots in disguise~',
   'drtin~': 'Good enough for me♡',
   amongusrules:
-    '0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. Your game name should be the same as your discord name \n 2. Mute in game unless Discussion mode is occurring \n 3. Wait for your queue by joining the Waiting room in voice discord \n 4. #among-us-discussion if you are having issues \n 5. We realize queue sytem is ineffecient, thank you we realize that you are frustrated with our shortcomings',
+    '0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. Your game name should be the same as your discord name \n 2. Mute in game unless Discussion mode is occurring \n 3. Wait for your queue by joining the Waiting room in voice discord \n 4. #among-us-discussion if you are having issues \n 5. We realize queue sytem is ineffecient. Thank you for your patience. We realize that you are frustrated with our shortcomings, it is still a work in progress',
 };
 
 // Add list of gifs of attachments memes here:
