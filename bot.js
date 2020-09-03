@@ -2,6 +2,7 @@ require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 const PREFIX = '!';
+// const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -50,6 +51,8 @@ const texts = {
     '♫ Baby shark, doo doo doo doo doo doo~ ♪ Baby shark, doo doo doo doo doo doo \n !play baby shark',
   transformers: '♪robots in disguise~',
   'drtin~': 'Good enough for me♡',
+  amongusrules:
+    '0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. Your game name should be the same as your discord name \n 2. Mute in game unless Discussion mode is occurring \n 3. Wait for your queue by joining the Waiting room in voice discord \n 4. #among-us-discussion if you are having issues \n 5. We realize queue sytem is ineffecient, thank you we realize that you are frustrated with our shortcomings',
 };
 
 // Add list of gifs of attachments memes here:
@@ -144,6 +147,7 @@ client.on('message', (message) => {
     message.reply(jokes[jokenumero]);
     return;
   }
+  // put this last, it will tell commands don't exist
   message.reply("Such commands doesn't exist. Refer to #bot-commands");
 });
 
