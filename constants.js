@@ -46,7 +46,7 @@ const texts = {
   transformers: '♪robots in disguise~',
   'drtin~': 'Good enough for me♡',
   amongusrules:
-    "0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. Your game name should be the same as your discord name \n 2. Mute in game unless Discussion mode is occurring \n 3. Wait for your queue by joining the Waiting room in voice discord \n 4. #among-us-discussion if you are having issues \n 5. I can't enter the game: Keep trying. The devs of this game did not do a very good job with their servers. \n 6. I did keep trying (rage) to enter the room: Go to Public Game > join public game > exit public game > enter code \n 7. We realize queue sytem is ineffecient. Thank you for your patience. We realize that you are frustrated with our shortcomings, it is still a work in progress ",
+    '0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. type !join in the twitch chat to be entered into the queue. \n 2. please have twitch name and discord name identical so it will be easier for us to identify you! \n 3. please have mic enabled so we can communicate verbally! \n 4. join the waiting room in discord voice chat \n 5. please mute and minimize stream prior to playing! \n 6. join the waiting room in discord voice chat \n 7. discussion is only available during meetings \n 8. enjoy the game!',
 };
 
 // Add list of gifs of attachments memes here:

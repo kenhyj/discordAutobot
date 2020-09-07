@@ -2,8 +2,8 @@ require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 // const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
-const { connect } = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-const QueueModel = require('./models/Queue');
+// const { connect } = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
+// const QueueModel = require('./models/Queue');
 
 const {
   PREFIX,
@@ -72,76 +72,78 @@ client.on('message', (message) => {
   // EFFECT: among us queue system. Only will work in a specific channel id in Udonz's discord channel.
   // type in discord to get discord channel id: \#ChannelName
   // type in discord to get discord roles id. : \@rolename
-  if (
-    // message.channel.id === ('749065478265241621' || '745802154027122729') &&
-    commands === 'qamongus'
-  ) {
-    if (!args.length) {
-      // return
-      message.reply('queue list - work in progress. Thank you.');
-      return;
-    }
-    // queue management for the Execs
-    // Mods id : <@&709548901673336922> // admin id: <@&709143778786672681> // udonz roles id: <@&709627743582552097>
-    if (
-      message.member.roles.cache.find(
-        (roles) =>
-          roles.id === '709548901673336922' ||
-          '70914377878667268' ||
-          '70962774358255209'
-      )
-    ) {
-      // get list of commands for the admin's queue system
-      if (args[0].toLowerCase() === 'commands') {
-        message.reply(
-          '!qamongus: get the queue list \n !qamongus transfer: transfers to top of queue to in game \n !qamongus kick @user: kicks the mentioned user off of the queue \n !qamongus clear all: purges the entire queue list \n !qamongus join: join the queue \n !qamongus out: self expulsion of the queue'
-        );
-        return;
-      }
-      // supposedly transfers top of the queue to voice channel / game
-      if (args[0].toLowerCase() === 'transfer') {
-        message.reply('transfer - work in progress. Thank you.');
-        return;
-      }
-      // kick mentioned user off of the queue
-      if (args[0].toLowerCase() === 'kick') {
-        const user = message.mentions.users.first() || message.author;
-        message.reply('kick - work in progress. Thank you.');
-        return;
-      }
-      // clears the queue list for the next use.
-      if (
-        args[0].toLowerCase() === 'clear' &&
-        args[1].toLowerCase() === 'all'
-      ) {
-        message.reply('clear all - work in progress. Thank you.');
-        return;
-      }
-    }
-    // anyone can join the queue
-    if (args[0].toLowerCase() === 'join') {
-      message.reply('join - work in progress. Thank you.');
-      return;
-    }
-    // they boot themself out of the queue
-    if (args[0].toLowerCase() === 'out') {
-      message.reply('out - work in progress. Thank you.');
-      return;
-    }
-    // returns list of commands for the queue
-    if (args[0].toLowerCase() === 'commands') {
-      message.reply(
-        '!qamongus join: join the queue \n !amongus out: self expulsion of the queue'
-      );
-      return;
-    }
-    // return
-    message.reply('work in progress. Thank you.');
-    return;
-  }
+  // if (
+  //   // message.channel.id === ('749065478265241621' || '745802154027122729') &&
+  //   commands === 'qamongus'
+  // ) {
+  //   if (!args.length) {
+  //     // return
+  //     message.reply('queue list - work in progress. Thank you.');
+  //     return;
+  //   }
+  //   // queue management for the Execs
+  //   // Mods id : <@&709548901673336922> // admin id: <@&709143778786672681> // udonz roles id: <@&709627743582552097>
+  //   if (
+  //     message.member.roles.cache.find(
+  //       (roles) =>
+  //         roles.id === '709548901673336922' ||
+  //         '70914377878667268' ||
+  //         '70962774358255209'
+  //     )
+  //   ) {
+  //     // get list of commands for the admin's queue system
+  //     if (args[0].toLowerCase() === 'commands') {
+  //       message.reply(
+  //         '!qamongus: get the queue list \n !qamongus transfer: transfers to top of queue to in game \n !qamongus kick @user: kicks the mentioned user off of the queue \n !qamongus clear all: purges the entire queue list \n !qamongus join: join the queue \n !qamongus out: self expulsion of the queue'
+  //       );
+  //       return;
+  //     }
+  //     // supposedly transfers top of the queue to voice channel / game
+  //     if (args[0].toLowerCase() === 'next') {
+  //       message.reply('next - work in progress. Thank you.');
+  //       return;
+  //     }
+  //     // kick mentioned user off of the queue
+  //     if (args[0].toLowerCase() === 'kick') {
+  //       const user = message.mentions.users.first() || message.author;
+  //       message.reply('kick - work in progress. Thank you.');
+  //       return;
+  //     }
+  //     // clears the queue list for the next use.
+  //     if (
+  //       args[0].toLowerCase() === 'clear' &&
+  //       args[1].toLowerCase() === 'all'
+  //     ) {
+  //       message.reply('clear all - work in progress. Thank you.');
+  //       return;
+  //     }
+  //   }
+  //   // anyone can join the queue
+  //   if (args[0].toLowerCase() === 'join') {
+  //     message.reply('join - work in progress. Thank you.');
+  //     return;
+  //   }
+  //   // they boot themself out of the queue
+  //   if (args[0].toLowerCase() === 'out') {
+  //     message.reply('out - work in progress. Thank you.');
+  //     return;
+  //   }
+  //   // returns list of commands for the queue
+  //   if (args[0].toLowerCase() === 'commands') {
+  //     message.reply(
+  //       '!qamongus join: join the queue \n !amongus out: self expulsion of the queue'
+  //     );
+  //     return;
+  //   }
+  //   // return
+  //   message.reply('work in progress. Thank you.');
+  //   return;
+  // }
   // ======================================================================================================
   // put this last, it will tell commands don't exist
-  message.reply("Such commands doesn't exist. Refer to #bot-commands");
+  message.reply(
+    "Such commands doesn't exist for Autobots. Refer to #bot-commands"
+  );
 });
 
 // async () => {
