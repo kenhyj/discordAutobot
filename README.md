@@ -60,19 +60,19 @@ Upper-lower cases have been made negligible. # of spaces between words do not ma
 
 #### Among Us Queue (MongoDB) (Work in Progress)
 
-Upper-lower cases have been made negligible. # of spaces between words do not matter.
-For now this queue is being developed for exclusive use of Udonz's discord channel. However, with coding knowledge, it can be tweaked to your needs.
+Upper-lower cases have been made negligible. # of spaces between words do not matter. <br />
+For now this queue is being developed for exclusive use of Udonz's discord channel. However, with coding knowledge, it can be tweaked to your needs. <br />
 !qamongus commands: returns list of all available queue commands and its functions for the among us game.
 
 ### Credits and help:
 
-tutorial 1: https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b
-tutorial 2: https://medium.com/davao-js/v2-tutorial-deploy-your-discord-bot-to-heroku-part-2-9a37572d5de4
-tutorial 3: https://github.com/renesansz/discord-greeter-bot/issues/252
+tutorial 1: https://medium.com/davao-js/2019-tutorial-creating-your-first-simple-discord-bot-47fc836a170b <br />
+tutorial 2: https://medium.com/davao-js/v2-tutorial-deploy-your-discord-bot-to-heroku-part-2-9a37572d5de4 <br />
+tutorial 3: https://github.com/renesansz/discord-greeter-bot/issues/252 <br />
 
-easing if statements and messy code: https://discordjs.guide/creating-your-bot/commands-with-user-input.html#basic-arguments
-faqs: https://github.com/AnIdiotsGuide/discordjs-bot-guide/blob/master/frequently-asked-questions.md
-queue via mongodb: https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-use of roles: https://stackoverflow.com/questions/45317305/find-out-if-someone-has-a-role
-
-tba: https://aister.gitbooks.io/discord-js-command-handlers/content/basic-if-else-block.html
+easing if statements and messy code: https://discordjs.guide/creating-your-bot/commands-with-user-input.html#basic-arguments <br />
+faqs: https://github.com/AnIdiotsGuide/discordjs-bot-guide/blob/master/frequently-asked-questions.md <br />
+queue via mongodb: https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK <br />
+use of roles: https://stackoverflow.com/questions/45317305/find-out-if-someone-has-a-role <br />
+<br />
+tba: https://aister.gitbooks.io/discord-js-command-handlers/content/basic-if-else-block.html <br />
