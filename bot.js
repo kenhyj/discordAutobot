@@ -2,11 +2,16 @@ require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 // const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
-// const { connect } = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-// const QueueModel = require('./models/Queue');
+const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
+const QueueModel = require('./models/Queue');
 
 const {
   PREFIX,
+  MODS_ID,
+  ADMINS_ID,
+  GODS_ID,
+  CHANNEL_ID_AMONG,
+  CHANNEL_ID_TEST,
   jokes,
   texts,
   staticpics,
@@ -19,7 +24,7 @@ client.on('ready', () => {
 
 // this will return the text memes listed above.
 // you must have the PREFIX in front of the command
-client.on('message', (message) => {
+client.on('message', async (message) => {
   // terminates if PREFIX isn't in the beginning. it's faster with this on there.
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;
   // https://discordjs.guide/creating-your-bot/commands-with-user-input.html#basic-arguments
@@ -29,7 +34,6 @@ client.on('message', (message) => {
   const commands = args.shift().toLowerCase();
   // directed memes + image
   for (const k in directedmeme) {
-    // if (message.content.toLowerCase().startsWith(PREFIX + k)) {
     if (commands === k) {
       const user = message.mentions.users.first() || message.author;
       const avatarEmbed = new MessageEmbed()
@@ -38,8 +42,7 @@ client.on('message', (message) => {
         .setAuthor('@' + user.username)
         .setImage(directedmeme[k].src || user.avatarURL())
         .setFooter('from ' + message.author.username);
-      message.channel.send(avatarEmbed);
-      return; // reduces slowness
+      return message.channel.send(avatarEmbed);
     }
   }
   // nondirected memes + image
@@ -50,95 +53,117 @@ client.on('message', (message) => {
         .setColor(0xff0000)
         // .setDescription(staticpics[kei].description)
         .setImage(staticpics[kei].src);
-      message.channel.send(embed);
-      return;
+      return message.channel.send(embed);
     }
   }
   // text memes
   for (const key in texts) {
     if (commands === key) {
-      message.reply(texts[key]);
-      return; // reduces slowness
+      return message.reply(texts[key]);
     }
   }
   // tell me a joke
   if (commands === 'joke') {
     const numjokes = jokes.length - 1;
     const jokenumero = Math.floor(Math.random() * numjokes);
-    message.reply(jokes[jokenumero]);
-    return;
+    return message.reply(jokes[jokenumero]);
   }
   //====================================================================================================
   // EFFECT: among us queue system. Only will work in a specific channel id in Udonz's discord channel.
   // type in discord to get discord channel id: \#ChannelName
   // type in discord to get discord roles id. : \@rolename
-  // if (
-  //   // message.channel.id === ('749065478265241621' || '745802154027122729') &&
-  //   commands === 'qamongus'
-  // ) {
-  //   if (!args.length) {
-  //     // return
-  //     message.reply('queue list - work in progress. Thank you.');
-  //     return;
-  //   }
-  //   // queue management for the Execs
-  //   // Mods id : <@&709548901673336922> // admin id: <@&709143778786672681> // udonz roles id: <@&709627743582552097>
-  //   if (
-  //     message.member.roles.cache.find(
-  //       (roles) =>
-  //         roles.id === '709548901673336922' ||
-  //         '70914377878667268' ||
-  //         '70962774358255209'
-  //     )
-  //   ) {
-  //     // get list of commands for the admin's queue system
-  //     if (args[0].toLowerCase() === 'commands') {
-  //       message.reply(
-  //         '!qamongus: get the queue list \n !qamongus transfer: transfers to top of queue to in game \n !qamongus kick @user: kicks the mentioned user off of the queue \n !qamongus clear all: purges the entire queue list \n !qamongus join: join the queue \n !qamongus out: self expulsion of the queue'
-  //       );
-  //       return;
-  //     }
-  //     // supposedly transfers top of the queue to voice channel / game
-  //     if (args[0].toLowerCase() === 'next') {
-  //       message.reply('next - work in progress. Thank you.');
-  //       return;
-  //     }
-  //     // kick mentioned user off of the queue
-  //     if (args[0].toLowerCase() === 'kick') {
-  //       const user = message.mentions.users.first() || message.author;
-  //       message.reply('kick - work in progress. Thank you.');
-  //       return;
-  //     }
-  //     // clears the queue list for the next use.
-  //     if (
-  //       args[0].toLowerCase() === 'clear' &&
-  //       args[1].toLowerCase() === 'all'
-  //     ) {
-  //       message.reply('clear all - work in progress. Thank you.');
-  //       return;
-  //     }
-  //   }
-  //   // anyone can join the queue
-  //   if (args[0].toLowerCase() === 'join') {
-  //     message.reply('join - work in progress. Thank you.');
-  //     return;
-  //   }
-  //   // they boot themself out of the queue
-  //   if (args[0].toLowerCase() === 'out') {
-  //     message.reply('out - work in progress. Thank you.');
-  //     return;
-  //   }
-  //   // returns list of commands for the queue
-  //   if (args[0].toLowerCase() === 'commands') {
-  //     message.reply(
-  //       '!qamongus join: join the queue \n !amongus out: self expulsion of the queue'
-  //     );
-  //     return;
-  //   }
-  //   // return
-  //   message.reply('work in progress. Thank you.');
-  //   return;
-  // }
+  if (
+    // message.channel.id === (CHANNEL_ID_AMONG || CHANNEL_ID_TEST) &&
+    commands === 'qgame'
+  ) {
+    if (!args.length) {
+      // return
+      // const req = await QueueModel.findById(message.author.username);
+      return message.reply('queue list - work in progress. Thank you.');
+    }
+    // anyone can join the queue. help : https://stackoverflow.com/questions/40102372/find-one-or-create-with-mongoose
+    // TODO: the date is coming out null.
+    if (args[0].toLowerCase() === 'join') {
+      let timenow = new Date();
+      const req = await QueueModel.findOneAndUpdate(
+        { _id: message.author.username },
+        { timestamp: timenow },
+        {
+          new: true,
+          upsert: true,
+        }
+      );
+      return !req
+        ? message.reply(
+            'Some thing went wrong. Plz try again or contact the admins and God'
+          )
+        : message.reply(
+            `${message.author.username} joined the queue on ${timenow}`
+          );
+    }
+    // anyone can boot themself out of the queue (that is if they are in the queue)
+    if (args[0].toLowerCase() === 'out') {
+      // const req = await QueueModel.findByIdAndDelete(message.author.username);
+      return message.reply(
+        'Sorry to see you leave. You are out of the queue. Thank you.'
+      );
+    }
+
+    // queue management for the Execs
+    if (
+      message.member.roles.cache.find(
+        (roles) => roles.id === MODS_ID || ADMINS_ID || GODS_ID
+      )
+    ) {
+      // get list of commands for the admin's queue system
+      if (args[0].toLowerCase() === 'commands') {
+        return message.reply(
+          '\n !qgame: returns your position in queue \n !qgame transfer: transfers to top of queue to in game \n !qgame kick @user: kicks the mentioned user off of the queue \n !qgame clear all: purges the entire queue list \n !qgame join: join the queue \n !qgame out: self expulsion of the queue'
+        );
+      }
+      // tells you who's next
+      if (args[0].toLowerCase() === 'next') {
+        const req = await QueueModel.findOne({});
+        return !req
+          ? message.reply(`Queue is M T !`)
+          : message.reply(`Next is: ${req._id}!`);
+      }
+      // moves the queue down
+      if (args[0].toLowerCase() === 'shift') {
+        await QueueModel.deleteOne({});
+        return message.reply('shift - work in progress. Thank you.');
+      }
+      if (args[0].toLowerCase() === 'kick') {
+        // TODO: kick mentioned user off of the queue
+        const user = message.mentions.users.first();
+        if (!user) {
+          return message.reply('kick who? pfftt Humans.');
+        }
+        const req = QueueModel.findByIdAndDelete({ user });
+        return !req
+          ? message.reply(`${user} can't be kicked. Was never in the queue`)
+          : message.reply(`${user} is not in the queue`);
+      }
+      // clears the queue list for the next use.
+      if (
+        args[0].toLowerCase() === 'clear' &&
+        args[1].toLowerCase() === 'all'
+      ) {
+        await QueueModel.deleteMany({});
+        return message.reply('clear the game queue. Thank you.');
+      }
+    }
+    // end of execs queue management.
+
+    // returns list of commands for the queue
+    if (args[0].toLowerCase() === 'commands') {
+      return message.reply(
+        '\n !qgame: returns position in queue \n !qgame join: join the queue \n !qgame out: self expulsion of the queue'
+      );
+    }
+    // return
+    return message.reply('work in progress. Thank you.');
+  }
   // ======================================================================================================
   // put this last, it will tell commands don't exist
   message.reply(
@@ -146,12 +171,13 @@ client.on('message', (message) => {
   );
 });
 
-// async () => {
-//   await connect('mongodb://localhost/mongodb-demo', {
-//     useNewUrlParser: true,
-//     useFindAndModify: false,
-//   });
-//   return client.login(TOKEN);
-// };
+mongoose.connect(process.env.DB_CONNECTION_KEN, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+});
+mongoose.connection.on('connected', () => {
+  console.log('mongoose is connected');
+});
 
 client.login(process.env.DISCORD_TOKEN);

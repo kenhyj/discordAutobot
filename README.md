@@ -62,7 +62,7 @@ Upper-lower cases have been made negligible. # of spaces between words do not ma
 
 Upper-lower cases have been made negligible. # of spaces between words do not matter. <br />
 For now this queue is being developed for exclusive use of Udonz's discord channel. However, with coding knowledge, it can be tweaked to your needs. <br />
-!qamongus commands: returns list of all available queue commands and its functions for the among us game.
+!qgame commands: returns list of all available queue commands and its functions for the among us game.
 
 ### Credits and help:
 

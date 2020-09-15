@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // https://www.guru99.com/mongodb-objectid.html
 const PostSchema = mongoose.Schema({
-  discordId: {
+  _id: {
     type: String,
     required: true,
   },

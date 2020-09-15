@@ -1,6 +1,11 @@
 // debugging: https://stackoverflow.com/questions/50426635/exporting-importing-in-node-js-discord-js
 
 const PREFIX = '!';
+const MODS_ID = '709548901673336922';
+const ADMINS_ID = '709143778786672681';
+const GODS_ID = '709627743582552097';
+const CHANNEL_ID_TEST = '745802154027122729';
+const CHANNEL_ID_AMONG = '749065478265241621';
 
 // tell me a joke
 const jokes = [
@@ -46,7 +51,7 @@ const texts = {
   transformers: '♪robots in disguise~',
   'drtin~': 'Good enough for me♡',
   amongusrules:
-    '0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. type !join in the twitch chat to be entered into the queue. \n 2. please have twitch name and discord name identical so it will be easier for us to identify you! \n 3. please have mic enabled so we can communicate verbally! \n 4. join the waiting room in discord voice chat \n 5. please mute and minimize stream prior to playing! \n 6. join the waiting room in discord voice chat \n 7. discussion is only available during meetings \n 8. enjoy the game!',
+    '\n 0. Do not share Room Code. We will post it in discord #among-us-discussion \n 1. type !join in the twitch chat to be entered into the queue. \n 2. please have twitch name and discord name identical so it will be easier for us to identify you! \n 3. please have mic enabled so we can communicate verbally! \n 4. join the waiting room in discord voice chat \n 5. please mute and minimize stream prior to playing! \n 6. discussion is only available during meetings \n 7. enjoy the game!',
 };
 
 // Add list of gifs of attachments memes here:
@@ -65,8 +70,13 @@ const staticpics = {
     title: 'facepalm',
     src: 'https://media.giphy.com/media/yfjk76P5Ex9y8/source.gif',
   },
+  divorcelawyer: {
+    title: 'need a divorce lawyer?',
+    src:
+      'https://i.pinimg.com/564x/8c/23/b5/8c23b59b68b6e8f62869b7ca252c863d.jpg',
+  },
 };
-// Add list of  picture memes here:
+// Add list of picture memes here:
 const directedmeme = {
   stewiesub: {
     title: "Where's my Sub, man?",
@@ -94,4 +104,15 @@ const directedmeme = {
   },
 };
 
-module.exports = { PREFIX, jokes, texts, staticpics, directedmeme };
+module.exports = {
+  PREFIX,
+  MODS_ID,
+  ADMINS_ID,
+  GODS_ID,
+  CHANNEL_ID_AMONG,
+  CHANNEL_ID_TEST,
+  jokes,
+  texts,
+  staticpics,
+  directedmeme,
+};
