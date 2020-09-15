@@ -2,8 +2,8 @@ require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 // const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
-const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-const QueueModel = require('./models/Queue');
+// const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
+// const QueueModel = require('./models/Queue');
 
 const {
   PREFIX,
