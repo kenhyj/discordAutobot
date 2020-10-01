@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
+// const fs = require('fs'); // https://www.youtube.com/watch?v=MiGBKhFtMtI&list=PLeLrvnqwEnOasx86ozE-cdf1JagGcUlRf&index=5&ab_channel=NerdCaveDevelopment
 // const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
 // const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
 // const QueueModel = require('./models/Queue');
@@ -165,10 +166,12 @@ client.on('message', async (message) => {
   //   return message.reply('work in progress. Thank you.');
   // }
   // ======================================================================================================
+
+  // this becomes annoying once we add other bots to the discord server.
   // put this last, it will tell commands don't exist
-  message.reply(
-    "Such commands doesn't exist for Autobots. Refer to #bot-commands"
-  );
+  // message.reply(
+  //   "Such commands doesn't exist for Autobots. Refer to #bot-commands"
+  // );
 });
 
 // mongoose.connect(process.env.DB_CONNECTION_KEN, {
