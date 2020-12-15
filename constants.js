@@ -50,7 +50,7 @@ function dmTemplate(memename, message) {
     .setAuthor('@' + user.username)
     .setImage(directedmeme[memename].src || user.avatarURL())
     .setFooter('from ' + message.author.username);
-  return message.channel.send(avatarEmbed);
+  return avatarEmbed;
 }
 
 // Add list of picture memes here:
