@@ -48,13 +48,21 @@ client.on('message', async (message) => {
   // Create a command variable by calling args.shift(), which will take the first element in array and return it while also removing it from the original array (so that you don't have the command name string inside the args array).
   const cmd = args.shift().toLowerCase();
 
-  if (!client.commands.has(cmd)) return; // fixme: unhandled promise rejection warning.
+  // supposedly returns every single commands autobot can handle.
+  // warning do not use "help" because every single other bots uses this command and it gets annoying
+  // if (cmd == "commands") {
+  //   client.commands.get(command.name,command.description);
+  // }
+
+  // if list of commands is not there just don't bother.
+  if (!client.commands.has(cmd)) return;
 
   try {
     client.commands.get(cmd).execute(message, args);
   } catch (error) {
     console.error(error); // this is okay. it shows on the editor terminal
-    message.reply('Autobots do not compute that command!'); // this could get awfully annoying later on.
+    // message.reply('Autobots do not compute that command!'); // this could get awfully annoying later on.
+    // reason for annoyance: multiple bots inserted but not all share the same set of commands
   }
 });
 client.login(process.env.DISCORD_TOKEN);

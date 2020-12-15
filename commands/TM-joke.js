@@ -1,3 +1,4 @@
+// this is the list of jokes.
 const jokes = [
   'My girlfriend told me she was leaving me because I keep pretending to be a Transformer, I said, "No, wait! I can change."',
   'Which transformer fell down the stairs? Stumblebee.',
@@ -31,16 +32,18 @@ const jokes = [
   "Why aren't there any baby Transformers? Because Auto-Bots pull out!",
   'I just saw Bumblebee yesterday and I have to say, the difference in quality from it to the previous Transformers movies is Knight and Bay.',
   'Name an X-Man that is also a Transformer. Bruce Jenner',
+  'Optimus Prime, was there an Autobutt named Gluteus Maximus?',
 ];
 
 module.exports = {
-  name: 'joke4u',
+  // the command recognized
+  name: 'joke',
   // description property is optional, but will be useful for the dynamic help command we'll be covering later.
   description: 'Gives you a joke listed above randomly',
   // execute function
   execute(message, args) {
     const numjokes = jokes.length - 1;
     const jokenumero = Math.floor(Math.random() * numjokes);
-    return message.reply(jokes[jokenumero]);
+    message.reply(jokes[jokenumero]);
   },
 };
