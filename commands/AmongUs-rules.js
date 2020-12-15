@@ -3,9 +3,10 @@ const rules =
 
 module.exports = {
   // the command recognized
-  name: 'rules',
+  name: 'amongusrules',
   // description property is optional, but will be useful for the dynamic help command we'll be covering later.
-  description: 'list the rules of your (Udonz) discord channel',
+  description:
+    'list the rules of your (Udonz) discord channel regarding among us game',
   // execute function
   execute(message, args) {
     message.reply(rules);
