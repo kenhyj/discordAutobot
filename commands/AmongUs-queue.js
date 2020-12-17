@@ -1,5 +1,5 @@
 // const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-const QueueModel = require('../models/Queue');
+// const QueueModel = require('../models/Queue');
 
 //====================================================================================================
 // EFFECT: among us queue system. Only will work in a specific channel id in Udonz's discord channel.
