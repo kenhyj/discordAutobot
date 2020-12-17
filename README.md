@@ -40,6 +40,7 @@ Author: kenhyj
 
 Upper-lower cases have been made negligible. # of spaces between words do not matter.
 
+- _!rules_ : answers with discord rules for Udonz Noodlez community.
 - _!babyshark_ : answers with "Baby shark, doo doo doo doo doo doo~ Baby shark, doo doo doo doo doo doo \n !play baby shark"
 - _!fliptable_ : answers with "┛◉Д◉)┛ 彡 ┻━┻"
 - _!transformers_ : answers with "robots in disguise"
@@ -51,6 +52,7 @@ Upper-lower cases have been made negligible. # of spaces between words do not ma
 
 Upper-lower cases have been made negligible. # of spaces between words do not matter.
 
+- _!commands_ : gives the github link to the command list
 - _!sloppy_ _@username_: answers with Sloppy Sloppy Sloppy embed with the mentioned user's username and avatar. If the username is invalid or empty, it will default to the author of this message.
 - _!stewiesubs_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is of Stewie beating the dying life out of Brian the dog.
 - _!amongkill#_ _@username_: answers with "Where's my sub, man" embed with the mentioned user's username. If the username is invalid or empty, it will default to the author of this message. The image is a Among Us game mascot killing another mascot. when it's stab kill when #=1, shot kill when #=2, snap kill when #=3.

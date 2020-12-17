@@ -1,15 +1,13 @@
 // this is the main file.
-
 require('dotenv').config();
 const { Client, MessageEmbed, Collection } = require('discord.js');
-const Discord = require('discord.js');
+// const Discord = require('discord.js');
 const client = new Client();
 
-// const fs = require('fs'); // https://www.youtube.com/watch?v=MiGBKhFtMtI&list=PLeLrvnqwEnOasx86ozE-cdf1JagGcUlRf&index=5&ab_channel=NerdCaveDevelopment
 // const Canvas = require('canvas'); // https://discordjs.guide/popular-topics/canvas.html#setting-up-canvas
 
 // command handling : https://discordjs.guide/command-handling/#individual-command-files
-const fs = require('fs');
+const fs = require('fs'); // https://www.youtube.com/watch?v=MiGBKhFtMtI&list=PLeLrvnqwEnOasx86ozE-cdf1JagGcUlRf&index=5&ab_channel=NerdCaveDevelopment
 
 client.commands = new Collection();
 

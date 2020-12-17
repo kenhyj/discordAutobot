@@ -1,5 +1,5 @@
 // const mongoose = require('mongoose'); // https://www.youtube.com/watch?time_continue=10&v=YhBKn4GjdUE&feature=emb_title&ab_channel=FykoPK
-// const QueueModel = require('./models/Queue');
+const QueueModel = require('../models/Queue');
 
 //====================================================================================================
 // EFFECT: among us queue system. Only will work in a specific channel id in Udonz's discord channel.
@@ -98,12 +98,6 @@
 //   return message.reply('work in progress. Thank you.');
 // }
 // ======================================================================================================
-
-// this becomes annoying once we add other bots to the discord server.
-// put this last, it will tell commands don't exist
-// message.reply(
-//   "Such commands doesn't exist for Autobots. Refer to #bot-commands"
-// );
 
 // mongoose.connect(process.env.DB_CONNECTION_KEN, {
 //   useNewUrlParser: true,

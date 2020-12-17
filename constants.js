@@ -3,6 +3,8 @@ const { MessageEmbed } = require('discord.js');
 
 const PREFIX = '!'; // this is how autobot knows you are calling for a command
 
+// type in discord to get discord channel id: \#ChannelName
+// type in discord to get discord roles id. : \@rolename
 const MODS_ID = '709548901673336922';
 const ADMINS_ID = '709143778786672681';
 const GODS_ID = '709627743582552097';

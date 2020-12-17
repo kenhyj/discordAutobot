@@ -8,6 +8,9 @@
 /.pnp
 .pnp.js
 
+# autobot icons
+/autobot_icon
+
 # testing
 /coverage
 
