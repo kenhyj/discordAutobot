@@ -47,6 +47,7 @@ Upper-lower cases have been made negligible. # of spaces between words do not ma
 - _!drtin~_ : answers with "Good enough for me♡"
 - _!joke_: tells a transformer joke
 - _!amongusrules_: lists rules and important notes regarding Udonz's discord "Among Us" twitch play.
+- _!amongusproxhelp_: tutorial on Among Us Proxy installation.
 
 #### Embed Reply
 
