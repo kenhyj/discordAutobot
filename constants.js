@@ -81,6 +81,11 @@ const directedmeme = {
     src:
       'https://media1.tenor.com/images/ef4993b593954811a0c0a1c98af698a3/tenor.gif',
   },
+  shame: {
+    title: 'Shame Shame Shame',
+    src:
+      'https://media1.tenor.com/images/b9761b2a3fa6f830ddcafc4ee5629527/tenor.gif',
+  },
 };
 
 module.exports = {
